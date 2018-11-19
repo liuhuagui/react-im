@@ -5,4 +5,4 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 An instant messaging front end based on Create-React-App,React,Redux,React-Router,Websocket,SockJS and STOMP.
 
-[img.png](https://github.com/51Bigod/react-im/blob/master/image.png)
+![img.png](https://github.com/51Bigod/react-im/blob/master/image.png)
