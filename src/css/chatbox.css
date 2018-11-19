@@ -1,0 +1,298 @@
+
+body{
+    background-color: #ffffff;
+}
+
+#box{
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    width: 747px;
+    height: 562px;
+}
+
+#header{
+    height: 63px;
+    padding:0px 21px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #3a84ff
+}
+
+#header-left{
+    width: 217px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-left img{
+    height: 22px;
+}
+
+#header-left p{
+    color:#ffffff;
+    font-size: 18px;
+    
+}
+
+#header-right{
+    width: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#header-right a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+#header-right a:first-child:hover{
+    background-color: #b0ceff
+}
+
+#header-right a:nth-of-type(2):hover{
+    background-color: red
+}
+
+#buttom{
+    border-radius: 0px 0px 6px 6px;
+    height: 500px;
+    display:flex;
+}
+
+#left{
+    width: 520px;
+    border-right: 1px solid #f3f3f3;
+}
+
+#right{
+    width: 228px; 
+}
+
+#right p{
+    font-size: 14px; 
+    letter-spacing: 1px
+}
+
+
+#article-title{
+    text-align: center;
+}
+
+#article{
+    text-align: justify;
+    text-indent: 27px;
+    padding: 0px 19px;
+}
+
+#tools{
+    display:  flex;
+    align-items: center;
+    border-top: 1px solid #f3f3f3;
+    height: 50px;
+}
+
+#tools-content{
+    margin-left: 32px;
+    width: 113px;
+    display: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#emoj,#file,#picture{
+    position:relative;
+    width: 30px;
+    height: 30px;
+}
+
+#textInput{
+    font-size: 14px;
+    height: 60px;
+}
+
+#text-area{
+    outline: none;
+    border: 0px;
+    padding: 0px;
+    height: 60px;
+    width: 520px;
+    resize: none;
+    font-size: 14px;
+}
+
+#text-area::-webkit-scrollbar-track ,#content::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+#text-area::-webkit-scrollbar,#content::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #ffffff;
+}
+
+#text-area::-webkit-scrollbar-thumb,#content::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #f3f3f3;
+}
+
+
+#buttonInput{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    height: 60px;
+}
+
+#buttonInput button{
+    margin: 0px 17px;
+    color: #ffffff;
+    background-color: #3a84ff;
+    border-radius: 6px;
+    width: 93px;
+    height: 32px;
+}
+
+#buttonInput p{
+    margin: 0px;
+    color: #626262;
+}
+
+#content{
+    overflow-y: auto;
+    height: 328px;
+}
+
+#content-internal{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.my{
+   position: relative;
+   display: flex;
+   justify-content: flex-end;
+   margin-right: 80px;
+   margin-top: 30px;
+}
+
+.info{
+    word-wrap: break-word;
+    max-width: 80%;
+}
+
+.my .info{
+   display: inline-block;
+   border-radius: 5px;
+   background-color: #b0ceff;
+   font-size: 16px;
+   padding: 12px;
+}
+
+.my .info::before{
+   content: '';
+   border-right: 0px solid #b0ceff;
+   border-bottom:15px solid #b0ceff;
+   border-bottom-right-radius: 15px 20px;
+   height: 20px;
+   width: 20px;
+   position: absolute;
+   top: -5px;
+   right: -12px;
+}
+
+.my .info::after{
+    width: 40px;
+    height: 40px;
+    content: url('../img/user-header.png');
+    position: absolute;
+    top: 0px;
+    right: -60px;
+ }
+
+ .its{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 80px;
+    margin-top: 30px;
+ }
+ 
+ .its .info{
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    padding: 12px;
+ }
+ 
+ .its .info::before{
+    content: '';
+    border-left: 0px solid #f3f3f3;
+    border-bottom:15px solid #f3f3f3;
+    border-bottom-left-radius: 15px 20px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: -5px;
+    left: -12px;
+ }
+ 
+ .its .info::after{
+     width: 40px;
+     height: 40px;
+     content: url('../img/consultant-header.png');
+     position: absolute;
+     top: 0px;
+     left: -60px;
+  }
+
+.sys{
+    display: inline-block;
+    padding: 12px;
+}
+
+.sys .info{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+ }
+
+.sys .info::before{
+   content: '';
+   background-color: black;
+   height: 1px;
+   width: 30%;
+}
+
+.sys .info::after{
+    content: '';
+    background-color: black;
+    height: 1px;
+    width: 30%;
+ }
+
+ #emoji-picker{
+   display: none;
+   position: absolute;
+   bottom: 30px;
+   left:-32px;
+ }
+
+ #emoj:hover #emoji-picker{
+   display: block;
+ }
