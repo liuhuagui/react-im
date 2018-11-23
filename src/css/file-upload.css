@@ -1,0 +1,12 @@
+#file,#picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    width: 30px;
+    height: 30px;
+}
+
+#file:hover,#picture:hover{
+    background-color: #dadada
+}

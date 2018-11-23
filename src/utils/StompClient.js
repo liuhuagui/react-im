@@ -14,8 +14,7 @@ id = id?id:'test';
 StompClient.connect(
    {id},
    frame => {//callBack
-     //遍历出订阅的队列，以及收到消息后的回调函数
-     subscribers.forEach(
+     subscribers.forEach(//遍历出订阅的队列，以及收到消息后的回调函数
         ({destination,callBack})=>StompClient.subscribe(destination,callBack)
      );
    },

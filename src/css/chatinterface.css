@@ -1,0 +1,26 @@
+#interface_header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #3a84ff
+}
+
+#interface_header p{
+    color:#ffffff;
+    font-size: 24px;
+    height: 36px;
+}
+
+#interface_header_left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25px;
+    width: 305px;
+}
+
+#interface_header_right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

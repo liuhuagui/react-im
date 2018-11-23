@@ -33,7 +33,6 @@ body{
 #header-left p{
     color:#ffffff;
     font-size: 18px;
-    
 }
 
 #header-right{
@@ -105,10 +104,17 @@ body{
     justify-content: space-between;
 }
 
-#emoj,#file,#picture{
+#emoj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position:relative;
     width: 30px;
     height: 30px;
+}
+
+#emoj:hover{
+  background-color: #dadada
 }
 
 #textInput{
@@ -211,6 +217,7 @@ body{
    position: absolute;
    top: -5px;
    right: -12px;
+   z-index: -1;
 }
 
 .my .info::after{
@@ -220,6 +227,7 @@ body{
     position: absolute;
     top: 0px;
     right: -60px;
+    z-index: -1;
  }
 
  .its{
@@ -248,6 +256,7 @@ body{
     position: absolute;
     top: -5px;
     left: -12px;
+    z-index: -1;
  }
  
  .its .info::after{
@@ -257,33 +266,21 @@ body{
      position: absolute;
      top: 0px;
      left: -60px;
+     z-index: -1;
   }
 
 .sys{
-    display: inline-block;
-    padding: 12px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .sys .info{
-    max-width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: #dadada;
+    text-align: center;
+    border-radius: 5px;
     font-size: 16px;
- }
-
-.sys .info::before{
-   content: '';
-   background-color: black;
-   height: 1px;
-   width: 30%;
-}
-
-.sys .info::after{
-    content: '';
-    background-color: black;
-    height: 1px;
-    width: 30%;
+    padding:5px;
  }
 
  #emoji-picker{

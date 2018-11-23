@@ -9,12 +9,10 @@ import file from '../../img/file.png';
 import { Link } from 'react-router-dom';
 import Draggable from 'react-draggable';
 import EmojiPicker from './EmojiPicker';
-import { Emoji } from 'emoji-mart'
+import {regPayload} from '../../utils/PayloadReg';
+import FileUpload from './FileUpload';
 
 class ChatBox extends React.Component {
-
-    static regEmoji=/<E:([^>]*)>/;
-    
     constructor(props) {
         super(props);
         this.areaRef = React.createRef();
@@ -26,23 +24,21 @@ class ChatBox extends React.Component {
     }
 
     componentDidMount(){
-        let scrollDom = this.scrollRef.current;
-        scrollDom.scrollTop = scrollDom.scrollHeight;
+        this.scrollEnd();
     }
 
 
     componentDidUpdate(){
+        this.scrollEnd();
+    }
+
+    scrollEnd = ()=>{
         let scrollDom = this.scrollRef.current;
         scrollDom.scrollTop = scrollDom.scrollHeight;
     }
 
     sendEmoji(emoji){
         this.props.sendMessage(`<E:${emoji.id}>`);
-    }
-
-    regEmoji=(emojiStr)=>{
-       var  emojiInfo=emojiStr.match(ChatBox.regEmoji);
-       return emojiInfo==null?emojiStr:<Emoji emoji={emojiInfo[1]} size={64} set='messenger'/>;
     }
 
     sendMessage(e){
@@ -70,7 +66,7 @@ class ChatBox extends React.Component {
      }
 
     render() {
-        const {messages} = this.props;
+        const {messages,sendMessage} = this.props;
 
         return <Draggable handle=".handle">
         <div id="box">
@@ -91,7 +87,7 @@ class ChatBox extends React.Component {
                       {
                          messages.map(({of,date,payload},index)=>(
                              <div className={of} key={date+index}>
-                                <div className="info">{this.regEmoji(payload)}</div>
+                                <div className="info">{regPayload(payload,this.scrollEnd)}</div>
                              </div>
                          ))
                       }
@@ -100,8 +96,12 @@ class ChatBox extends React.Component {
                     <div id="tools">
                         <div id="tools-content">
                             <div id="emoj"><img  src={emoj} /><EmojiPicker id="emoji-picker" selectFuntion={this.sendEmoji} /></div>
-                            <div id="picture"><img  src={picture} /></div>
-                            <div id="file"><img  src={file} /></div>
+                            <FileUpload id="picture" accept="image/*" sendMessage={sendMessage} url="http://192.168.1.69" action="/upload">
+                                <img  src={picture} />
+                            </FileUpload>
+                            <FileUpload id="file" sendMessage={sendMessage} url="http://192.168.1.69" action="/upload" >
+                                <img  src={file} />
+                            </FileUpload>
                         </div>
                     </div>
                     <div id="textInput">
