@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import StompClient from '../../utils/StompClient';
-import ChatBox from '../uis/ChatBox';
-import ChatInterface from '../uis/ChatInterface';
+import VisitorInterface from '../uis/VisitorInterface';
+import ServerInterface from '../uis/ServerInterface';
 
 //Store's Listener: state to props
 function mapStateToProps(state){
@@ -26,6 +26,7 @@ function mapDispatchToProps(dispatch){
 const ChatContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(type?ChatBox:ChatInterface);
+)(VisitorInterface);
+// )(type?VisitorInterface:ServerInterface);
 
 export default ChatContainer;

@@ -32,7 +32,7 @@ export default class FileUpload extends React.Component{
            method:'post',
            body:form
        }).then(response=>{
-          this.formRef.current.reset();
+          this.formRef.current.reset();//解决input[type=file]选择同名文件不能触发change事件——reset表单
           if(response.ok)
             return response.json();
           throw new  Error(`Request is failed, status is ${response.status}`);
