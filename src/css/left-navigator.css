@@ -1,0 +1,43 @@
+#left_navigator{
+    width: 70px;
+    height: 270px;
+    position: fixed;
+    top: calc((100% - 300px) / 2);
+    left:0px;
+}
+
+#left_navigator > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 90px;
+}
+
+#left_navigator_message{
+    background: url('../img/message.png') center no-repeat
+ }
+
+#left_navigator_message:hover, #left_navigator_message.active{
+    border-left: 2px solid #3a84ff;
+    background: url('../img/active_message.png') center no-repeat
+ }
+
+ #left_navigator_gear{
+    background: url('../img/gear.png') center no-repeat
+ }
+
+#left_navigator_gear:hover, #left_navigator_gear.active{
+    border-left: 2px solid #3a84ff;
+    background: url('../img/active_gear.png') center no-repeat
+ }
+
+ #left_navigator_chart{
+    background: url('../img/chart.png') center no-repeat
+ }
+
+#left_navigator_chart:hover, #left_navigator_chart.active{
+    border-left: 2px solid #3a84ff;
+    background: url('../img/active_chart.png') center no-repeat
+ }
+

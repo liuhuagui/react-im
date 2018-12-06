@@ -1,3 +1,14 @@
+#content{
+    overflow-y: auto;
+    height: 328px;
+}
+
+#content-internal{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 #tools{
     display:  flex;
     align-items: center;
@@ -33,16 +44,12 @@
     justify-content: center;
 }
 
-#textInput form{
-    width: 99%;
-}
-
 #text-area{
     outline: none;
     border: 0px;
     padding: 0px;
-    height: 60px;
-    width: 100%;
+    height: 100%;
+    width: 99%;
     resize: none;
     font-size: 14px;
 }
@@ -90,17 +97,6 @@
     color: #626262;
 }
 
-#content{
-    overflow-y: auto;
-    height: 328px;
-}
-
-#content-internal{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
 .my{
    position: relative;
    display: flex;
@@ -135,14 +131,12 @@
    z-index: -1;
 }
 
-.my .info::after{
+.my > img:last-child{
     width: 40px;
     height: 40px;
-    content: url('../img/user-header.png');
     position: absolute;
     top: 0px;
     right: -60px;
-    z-index: -1;
  }
 
  .its{
@@ -174,15 +168,13 @@
     z-index: -1;
  }
  
- .its .info::after{
+ .its > img:last-child{
      width: 40px;
      height: 40px;
-     content: url('../img/consultant-header.png');
      position: absolute;
      top: 0px;
      left: -60px;
-     z-index: -1;
-  }
+}
 
 .sys{
     display: flex;

@@ -1,19 +1,8 @@
-body{
-  display: flex;
-  justify-content: center;
-}
-
-#interface_main{
-    width: 1270px;
-    height: 945px;
-    box-shadow: -2px -2px 10px rgba(0,0,0,.3) inset;
-}
-
 #interface_header{
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background-color: #3a84ff
+    background-color: #3a84ff;
 }
 
 #interface_header p{
@@ -72,4 +61,223 @@ body{
 #header_right_third:hover{
     background-color:  #b0ceff;
 }
+
+#interface_body{
+    position: relative;   
+    display: flex;
+    justify-content: center;
+}
+
+#body_left{
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 70px;
+    border: 1px solid #f3f3f3;
+}
+
+#body_center{
+    display: flex;
+    width: 1270px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) 
+}
+
+#body_center > div{
+    border: 1px solid #f3f3f3;
+}
+
+
+#body_center_first{
+    overflow-y: auto;
+    width: 335px;
+}
+
+#body_center_first::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+#body_center_first::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #ffffff;
+}
+
+#body_center_first::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #f3f3f3;
+}
+
+#body_center_second{
+    width: 600px;
+}
+
+#body_center_third{
+    position: relative;
+    width: 335px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   
+}
+
+.body_center_first{
+    height: 74px;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.body_center_first:hover{
+    background: #f3f3f3
+}
+
+.body_center_first_header{
+    display: flex;
+    align-items: center;
+}
+
+.body_center_first_body{
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.body_top{
+    display: flex;
+    justify-content: space-between
+}
+
+.body_bottom{
+    height: 25px;
+    font-size: 20px;
+    color: gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#body_center_third > span{
+    font-size: 20px;
+    position: absolute;
+    top:30px;
+    left:30px;
+}
+
+#quick_reply{
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quick_reply_item{
+    position: relative;
+    width: 100%;
+}
+
+.quick_reply_item:hover{
+    background: #b0ceff;
+    color: black;
+ }
+
+.item_content{
+    width: 100%;
+    font-size: 16px;
+    line-height: 50px;
+    text-indent: 30px;
+    color: gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.item_hidden{
+    min-height: 50PX;
+    text-indent: 30px;
+    word-break: break-all;/*防止英文单词造成的换行*/
+    width: 100%;
+    display: none;
+    background: #f3f3f3;
+    position: absolute;
+    top: 0px;
+    right: 100%;
+}
+
+.quick_reply_item:hover .item_hidden{
+    display: block
+ }
+
+ .quick_reply_item > div:nth-child(3) {
+     background: #ffffff;
+     position: absolute;
+     width: 85px; 
+     border: 1px solid #a8a8a8;
+     text-align: center;
+     display: none;
+ }
+
+ .quick_reply_item > div:nth-child(3):hover{
+   background: #4ce07e;
+   color: white;
+ }
+
+.add_quick_reply{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 82%;
+    height: 50px;
+    background-color:#f3f3f3;
+}
+
+.add_quick_reply_align{
+    position: absolute;
+    border-color: transparent transparent transparent #a8a8a8;
+    border-left-width: 2px;
+    border-left-style: solid;
+    height: 20px;
+    left: calc((100% - 2px)/2);
+}
+
+.add_quick_reply_justify{
+    border-color: #a8a8a8 transparent transparent transparent ;
+    border-top-width: 2px;
+    border-top-style: solid;
+    width: 30px;
+}
+
+.add_quick_reply_input{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.add_quick_reply_input input{
+    height: 30px;
+    border-radius: 8px;
+}
+
+.add_quick_reply_input button{
+    margin-right: 30px;
+    font-size: 18px;
+    color: #3a84ff;
+    border: 0px;
+    background: #fff;
+}
+
+
+
+
+
+
 

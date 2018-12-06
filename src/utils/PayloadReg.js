@@ -41,23 +41,23 @@ const viewImage = ({target:{naturalHeight,naturalWidth}},url) => {
    let {screen:{availHeight,availWidth},open} = window;
    let imgHeight = naturalHeight , imgWidth = naturalWidth;
    
-   let hR = 22/27;
-   let wR = 2/3;
+   let hR = 22/27;//允许图片最大高度与屏幕可用高度比
+   let wR = 2/3;//允许图片最大宽度与屏幕可用宽度比
 
-   if(naturalHeight > naturalWidth){
-     if(naturalHeight > hR*availHeight){
+   if(naturalHeight > naturalWidth){//高图
+     if(naturalHeight > hR*availHeight){//如果大于允许的最大高度，则按高度比等比缩放
        imgHeight = hR*availHeight;
        imgWidth = imgHeight/naturalHeight*naturalWidth;
      }
    }
-   else{
-    if(naturalWidth > wR*availWidth){
+   else{//宽图
+    if(naturalWidth > wR*availWidth){//如果大于允许的最大宽度，则宽度比等比缩放
       imgWidth = wR*availWidth;
       imgHeight = imgWidth/naturalWidth*imgHeight;
     }
    }
    open(url, '', `location=no,width=${imgWidth},height=${imgHeight}
-      ,left=${(availWidth-imgWidth)*0.5},top=${(availHeight-imgHeight)*0.5}`);
+      ,left=${(availWidth-imgWidth)*0.5},top=${(availHeight-imgHeight)*0.5}`);//让窗口居中显示
 }
   
 

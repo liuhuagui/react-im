@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../css/file-upload.css';
+import {fileUpload} from '../../utils/UrlConfig';
 
 /**
  *  url:域名+端口
@@ -24,25 +25,34 @@ export default class FileUpload extends React.Component{
    }
 
    upload(){
-       const {url,action,accept,sendMessage} = this.props;
+       const {accept,sendMessage,toId} = this.props;
+    //    if(!toId){
+    //        alert('未指定聊天对象');
+    //        return;
+    //    }
+       const {domain,action:{upload}} = fileUpload;
+
        var form = new FormData();
        var file = this.hiddenFileRef.current.files[0];
        form.append('file',file);
-       fetch(`${url+action}`,{
+       
+       fetch(`${domain+upload}`,{
            method:'post',
            body:form
        }).then(response=>{
-          this.formRef.current.reset();//解决input[type=file]选择同名文件不能触发change事件——reset表单
+          //解决input[type=file]选择同名文件不能触发change事件——reset表单
+          this.formRef.current.reset();
+          
           if(response.ok)
             return response.json();
           throw new  Error(`Request is failed, status is ${response.status}`);
        }).then(({result,msg})=>{
           if(result === 1){
             if(accept){
-                sendMessage(`<I:${url+'/'+msg}>`);
+                sendMessage(`<I:${domain+'/'+msg}>`,toId);
                 return;
             }
-            sendMessage(`<F:${url+'/'+msg}:${msg}:${file.size}>`);
+            sendMessage(`<F:${domain+'/'+msg}:${msg}:${file.size}>`,toId);
             return;
           }
           console.error('文件发送失败');

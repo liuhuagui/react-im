@@ -1,9 +1,5 @@
 import {createStore} from 'redux';
-import reducers from './Reducers';
-
-const init_state = {
-    messages:[{of:'my',date:'2013-6-5',payload:'你是谁啊？'}]
-};
+import reducers, {init_state} from './Reducers';
 
 const store = createStore(reducers,init_state);
 

@@ -1,9 +1,12 @@
 import SockJS from 'sockjs-client';
 import {over} from "webstomp-client";
 import store from './Store';
-import subscribers from './Subscribers';
+import subscribers, {trackEmit} from './Subscribers';
+import {chat} from './UrlConfig';
 
-const sockjs = new SockJS('http://192.168.1.69/chat');
+const {domain,action:{endPoint}} = chat;
+
+const sockjs = new SockJS(domain+endPoint);
 
 const StompClient = over(sockjs);
 
@@ -15,11 +18,11 @@ StompClient.connect(
    {id},
    frame => {//callBack
      subscribers.forEach(//遍历出订阅的队列，以及收到消息后的回调函数
-        ({destination,callBack})=>StompClient.subscribe(destination,callBack)
+        ({destination,callBack})=>StompClient.subscribe(destination,(message)=>callBack(message,store.dispatch))
      );
    },
   error =>{//errorBack
-     store.dispatch({type:'ERROR',payload:'连接失败'});
+     store.dispatch({type:'ERROR',payload: trackEmit('连接失败')});
      console.log(error);
   }
 );
