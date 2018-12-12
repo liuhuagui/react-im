@@ -81,3 +81,23 @@ export const regPayload = (payload, scrollEnd) => {
     return <div>{`${regInfo[2]}(${regInfo[3] / 1000}KB)`}<br /><a href={regInfo[1]} download>下载</a></div>;
   return payload;
 }
+
+/**
+ * 正则负载，根据负载格式，选择提示内容
+ * @param {String} payload 负载内容
+ */
+export const regPrompt = (payload) => {
+  //是否是表情
+  var regInfo = payload.match(regEmoji);
+  if (regInfo)
+    return '[表情]';
+  //是否是图片
+  regInfo = payload.match(regImg);
+  if (regInfo)
+    return '[图片]';
+  //是否是其他文件
+  regInfo = payload.match(regFile);
+  if (regInfo)
+    return '[文件]';
+  return payload;
+}

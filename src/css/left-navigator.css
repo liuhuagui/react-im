@@ -6,7 +6,7 @@
     left:0px;
 }
 
-#left_navigator > div{
+#left_navigator  div{
     display: flex;
     justify-content: center;
     align-items: center;

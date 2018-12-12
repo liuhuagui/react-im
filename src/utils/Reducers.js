@@ -24,7 +24,8 @@ const messages =  {
 
 export const init_state = {
     messages, //消息记录
-    toId: ''//会话对象
+    toId: '',//会话对象
+    quickReplies:{}//快捷回复
 };
 
 /**

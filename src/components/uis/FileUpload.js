@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../css/file-upload.css';
-import {fileUpload} from '../../utils/UrlConfig';
+import {fileUpload} from '../../utils/GlobalConfig';
 
 /**
  *  url:域名+端口
@@ -26,10 +26,10 @@ export default class FileUpload extends React.Component{
 
    upload(){
        const {accept,sendMessage,toId} = this.props;
-    //    if(!toId){
-    //        alert('未指定聊天对象');
-    //        return;
-    //    }
+       if(!toId){
+           alert('未指定聊天对象');
+           return;
+       }
        const {domain,action:{upload}} = fileUpload;
 
        var form = new FormData();
