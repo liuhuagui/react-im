@@ -125,7 +125,7 @@ export default class ServerInterface extends React.Component {
         const othersDiv = Object.entries(otherMessages)
             .sort(([, v1], [, v2]) => v2[v2.length - 1].date.localeCompare(v1[v1.length - 1].date))
             .map(([k, v], index) =>
-                <div className="body_center_first" style={{backgroundColor:v[v.length - 1].of==='its'?'#dc4e2f':''}} key={k} id={k} onClick={this.openService}>
+                <div className="body_center_first" style={{backgroundColor:v[v.length - 1].of==='its'?'#b0ceff':''}} key={k} id={k} onClick={this.openService}>
                     <div className="body_center_first_header"><img alt="用户头像" src={userHeader} /></div>
                     <div className="body_center_first_body">
                         <div className="body_top">
